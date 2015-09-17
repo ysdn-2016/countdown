@@ -43,8 +43,9 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#e0000000', e
 // Title
 
 .title {
-	font-size: 40px;
+	font-size: 36px;
 	padding: 40px;
+	line-height: 40px;
 	font-weight: bold;
 	color: white;
 	float: left;
@@ -57,6 +58,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#e0000000', e
 	font-family: 'Helvetica Neue',Helvetica,Arial,sans-serif;
     font-weight: 600;
     font-size: 36px;
+    line-height: 40px;
     padding-right: 40px;
     color: white;
 }
