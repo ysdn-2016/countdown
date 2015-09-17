@@ -1,0 +1,49 @@
+﻿<!DOCTYPE HTML>
+<html lang="en">
+	<head>
+		<title>Countdown! YSDN 2016 Grad Show</title>
+
+		<meta charset="UTF-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+
+		<link rel="stylesheet" href="css/screen.css">
+		<!-- <link rel="icon" href="/favicon.ico"> -->
+
+	</head>
+	<body>
+		<section class="c-body">
+			<div class="row cf">
+				<h1 class="title">ysdn grad<br > show 2016</h1>
+				<div id="defaultCountdown" class="t-countdown"></div>
+			</div>
+		</section>
+
+		<script src="http://code.jquery.com/jquery-latest.min.js"></script>
+
+		<!-- Typekit code -->
+		<script type="text/javascript" src="//use.typekit.net/psm0wvc.js"></script>
+		<script type="text/javascript">try{Typekit.load();}catch(e){}</script>
+		
+		<!-- Countdown scripts -->
+		<script src="js/jquery.plugin.js"></script>
+		<script src="js/jquery.countdown.js"></script>
+		<script>
+			$(function () {
+				var austDay = new Date();
+				austDay = new Date(austDay.getFullYear() + 1, 4 - 1, 19);
+				$('#defaultCountdown').countdown({
+					until: austDay,
+					labels: ['Years', 'Months', 'Weeks', 'Days', 'Hrs', 'Min', 'Sec'], 
+					labels1: ['Years', 'Months', 'Weeks', 'Days', 'Hrs', 'Min', 'Sec'], // The display texts for the counters if only one 
+					compact: false,
+					padZeroes: true
+				});
+				$('#year').text(austDay.getFullYear());
+			});
+		</script>
+		<script src="js/scripts.js"></script>
+
+	</body>
+</html>
+

@@ -1,0 +1,33 @@
+// Typography
+
+html {
+  font-family: "proxima-nova", "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+}
+
+// Font smoothing hack
+html, html a {
+    -webkit-font-smoothing: antialiased !important;
+    text-shadow: 1px 1px 1px rgba(0,0,0,0.004);
+}
+
+h1 {}
+
+h2 {}
+
+a {
+	text-decoration: none;
+	color: inherit;
+}
+
+p {
+	color: #666;
+    text-align: left;
+    font-family: 'Helvetica Neue',Helvetica,Arial,sans-serif;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 28px;
+    margin-top: 20px;
+    max-width: 500px;
+}
+
+li {}
