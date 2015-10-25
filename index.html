@@ -1,50 +1,27 @@
-﻿<!DOCTYPE HTML>
+<!DOCTYPE html>
 <html lang="en">
-	<head>
-		<title>Countdown! YSDN 2016 Grad Show</title>
-
-		<meta charset="UTF-8">
-		<meta http-equiv="X-UA-Compatible" content="IE=edge">
-		<meta name="viewport" content="width=device-width, initial-scale=1">
-
-		<link rel="stylesheet" href="css/screen.css">
-		<!-- <link rel="icon" href="/favicon.ico"> -->
-
-	</head>
-	<body>
-		<div class="c-bgi"></div>
-		<section class="c-body">
-			<div class="row cf">
-				<h1 class="title">ysdn grad<br > show 2016</h1>
-				<div id="defaultCountdown" class="t-countdown"></div>
-			</div>
-		</section>
-
-		<script src="http://code.jquery.com/jquery-latest.min.js"></script>
-
-		<!-- Typekit code -->
-		<script type="text/javascript" src="//use.typekit.net/psm0wvc.js"></script>
-		<script type="text/javascript">try{Typekit.load();}catch(e){}</script>
-		
-		<!-- Countdown scripts -->
-		<script src="js/jquery.plugin.js"></script>
-		<script src="js/jquery.countdown.js"></script>
-		<script>
-			$(function () {
-				var austDay = new Date();
-				austDay = new Date(austDay.getFullYear() + 1, 4 - 1, 19);
-				$('#defaultCountdown').countdown({
-					until: austDay,
-					labels: ['years', 'months', 'weeks', 'days', 'hrs', 'min', 'sec'], 
-					labels1: ['years', 'months', 'weeks', 'days', 'hrs', 'min', 'sec'], // The display texts for the counters if only one 
-					compact: false,
-					padZeroes: true
-				});
-				$('#year').text(austDay.getFullYear());
-			});
-		</script>
-		<script src="js/scripts.js"></script>
-
-	</body>
+<head>
+  <meta charset="UTF-8">
+  <title>YSDN Grad Show 2016</title>
+  <link rel="stylesheet" href="css/style.css">
+  <script src="js/underline.js"></script>
+</head>
+<body>
+  <div class="wrapper">
+    <h1>YSDN | 2016</h1>
+    <form>
+      <input type="email" name="email" placeholder="Enter your email" autocomplete="off"></input>
+      <h1>Add</h1>
+    </form>
+    <div class="bottom">
+      <div class="info">
+      <li><a href="https://www.google.com/calendar/event?action=TEMPLATE&tmeid=cWhiNHNhOWVvZHYzZ3Mwc29kNGp0cHVlbmMgaW50ZXJhY3RpdmUueXNkbjE2QG0&tmsrc=interactive.ysdn16%40gmail.com">April 18 -19, 2016</a></li>
+      <li><a href="https://goo.gl/maps/rpwkdMwg5M52">Liberty Grand, Toronto, ON</a></li>
+      <li><a href="#" class="disabled">Facebook</a></li>
+      <li><a href="#" class="disabled">Twitter</a></li>
+      <li><a href="https://instagram.com/ysdn2016/">Instagram</a></li>
+      </div>
+    </div>
+  </div>
+</body>
 </html>
-
