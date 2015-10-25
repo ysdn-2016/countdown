@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>YSDN Grad Show 2016</title>
+  <link rel="stylesheet" href="css/style.css">
+  <script src="js/underline.js"></script>
+</head>
+<body>
+  <div class="wrapper">
+    <h1>YSDN | 2016</h1>
+    <form>
+      <input type="email" name="email" placeholder="Enter your email" autocomplete="off"></input>
+      <h1>Add</h1>
+    </form>
+    <div class="bottom">
+      <div class="info">
+      <li><a href="#">April 18 -19, 2016</a></li>
+      <li><a href="https://goo.gl/maps/rpwkdMwg5M52">Liberty Grand, Toronto, ON</a></li>
+      <li><a href="#">Facebook</a></li>
+      <li><a href="#">Twitter</a></li>
+      <li><a href="#">Instagram</a></li>
+      </div>
+    </div>
+  </div>
+</body>
+<script>
+var content_id = 'this';
+
+max = 30;
+
+//binding keyup/down events on the contenteditable div
+$("#this").keypress(function(e){ return e.which != 13; });
+$('#'+content_id).keyup(function(e){ check_charcount(content_id, max, e); });
+$('#'+content_id).keydown(function(e){ check_charcount(content_id, max, e); });
+
+function check_charcount(content_id, max, e)
+{
+    if(e.which != 8 && $('#'+content_id).text().length > max)
+    {
+       // $('#'+content_id).text($('#'+content_id).text().substring(0, max));
+       e.preventDefault();
+    }
+}
+</script>
+</html>
