@@ -15,32 +15,13 @@
     </form>
     <div class="bottom">
       <div class="info">
-      <li><a href="#">April 18 -19, 2016</a></li>
+      <li><a href="https://www.google.com/calendar/event?action=TEMPLATE&tmeid=cWhiNHNhOWVvZHYzZ3Mwc29kNGp0cHVlbmMgaW50ZXJhY3RpdmUueXNkbjE2QG0&tmsrc=interactive.ysdn16%40gmail.com">April 18 -19, 2016</a></li>
       <li><a href="https://goo.gl/maps/rpwkdMwg5M52">Liberty Grand, Toronto, ON</a></li>
-      <li><a href="#">Facebook</a></li>
-      <li><a href="#">Twitter</a></li>
-      <li><a href="#">Instagram</a></li>
+      <li><a href="#" class="disabled">Facebook</a></li>
+      <li><a href="#" class="disabled">Twitter</a></li>
+      <li><a href="https://instagram.com/ysdn2016/">Instagram</a></li>
       </div>
     </div>
   </div>
 </body>
-<script>
-var content_id = 'this';
-
-max = 30;
-
-//binding keyup/down events on the contenteditable div
-$("#this").keypress(function(e){ return e.which != 13; });
-$('#'+content_id).keyup(function(e){ check_charcount(content_id, max, e); });
-$('#'+content_id).keydown(function(e){ check_charcount(content_id, max, e); });
-
-function check_charcount(content_id, max, e)
-{
-    if(e.which != 8 && $('#'+content_id).text().length > max)
-    {
-       // $('#'+content_id).text($('#'+content_id).text().substring(0, max));
-       e.preventDefault();
-    }
-}
-</script>
 </html>
