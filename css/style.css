@@ -155,14 +155,17 @@ input:focus ~ button .svg-wrapper .shape {
 
 @media (max-width: 960px) {
   h1 {
-    margin-top: 40px;
-    margin-bottom: 20px; }
+    margin-bottom: 180px; }
 
   li, .info {
     display: block; }
 
   li {
     margin: 10px 0; }
+
+  a {
+    border-bottom: 2px solid white;
+    padding-bottom: 2px; }
 
   .bottom {
     position: inherit;
@@ -176,7 +179,7 @@ input:focus ~ button .svg-wrapper .shape {
     -webkit-appearance: none;
     -webkit-border-radius: 0;
     border-radius: 0;
-    padding: 0; }
+    padding-left: 0; }
 
   button {
     display: block; }
@@ -196,6 +199,6 @@ input:focus ~ button .svg-wrapper .shape {
     color: #A5A5A5; }
 
   p:first-of-type {
-    margin-top: 120px; } }
+    margin-top: 80px; } }
 
 /*# sourceMappingURL=style.css.map */
