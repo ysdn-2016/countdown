@@ -33,6 +33,10 @@ a:hover
   border-bottom: 2px solid white
   padding-bottom: 3px
 
+p a
+  font-size: 1rem
+  color: white
+
 .desc
   margin: 60px 0
   max-width: 320px
@@ -73,7 +77,7 @@ button
   padding: 0
   cursor: pointer
   position: relative
-  top: 15px
+  top: 16px
   float: right
   transition: 0.2s ease all
   -moz-transition: 0.2s ease all
@@ -154,6 +158,9 @@ input:focus ~ button .svg-wrapper .shape
 
 @media (max-width: 960px)
 
+  h1
+    margin-bottom: 100px
+
   li, .info
     display: block
 
@@ -162,12 +169,14 @@ input:focus ~ button .svg-wrapper .shape
 
   .bottom
     position: inherit
+    width: 100%
 
   .wrapper
     padding: 20px
 
   input, .bar
     width: 100%
+    -webkit-appearance: none
 
   button
     display: block
@@ -186,5 +195,5 @@ input:focus ~ button .svg-wrapper .shape
   button .text
     color: #A5A5A5
 
-  p
-    margin-top: 80px
+  p:first-of-type
+    margin-top: 120px
