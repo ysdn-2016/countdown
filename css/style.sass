@@ -77,7 +77,7 @@ button
   padding: 0
   cursor: pointer
   position: relative
-  top: 16px
+  top: 15px
   float: right
   transition: 0.2s ease all
   -moz-transition: 0.2s ease all
@@ -204,3 +204,10 @@ input:focus ~ button .svg-wrapper .shape
 
   p:first-of-type
     margin-top: 80px
+
+@media
+(-webkit-min-device-pixel-ratio: 2),
+(min-resolution: 192dpi) {
+  button
+    top: 16px
+}
