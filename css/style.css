@@ -5,25 +5,37 @@ body {
 .wrapper {
   padding: 70px; }
 
-h1, h2, li a, p, button, #Email-error {
+h1, h2, li a, p, button, #Email-error, .text {
   font-family: -apple-system, ".SFNSDisplay-Regular", "Segoe UI", "Roboto", sans-serif;
-  color: white; }
+  font-weight: normal;
+  color: white;
+  margin: 0; }
 
-h1 {
-  font-size: 1.5rem;
-  margin: 0;
-  font-weight: normal; }
+h1, button {
+  font-size: 1.5rem; }
 
 h2, #Email-error, #ButtonSubmit {
-  font-size: 1rem;
-  margin: 0;
-  font-weight: normal; }
+  font-size: 1rem; }
 
 p {
-  margin-top: 60px;
-  max-width: 310px;
-  line-height: 1.4rem;
-  margin-bottom: 60px; }
+  line-height: 1.4rem; }
+
+li {
+  text-decoration: none;
+  list-style: none;
+  display: inline-block; }
+
+a {
+  font-size: 1.2rem;
+  text-decoration: none; }
+
+a:hover {
+  border-bottom: 2px solid white;
+  padding-bottom: 3px; }
+
+.desc {
+  margin: 60px 0;
+  max-width: 320px; }
 
 #Email-error {
   display: block;
@@ -52,43 +64,25 @@ input {
   -moz-transition: 0.3s ease all;
   -webkit-transition: 0.3s ease all; }
 
-input ~ button {
+input:focus {
+  width: calc(100% - 140px); }
+
+button {
   display: inline-block;
   opacity: 0;
-  background: none;
-  font-size: 1.5rem;
-  margin: 0;
-  font-weight: normal;
-  border: none;
+  padding: 0;
   cursor: pointer;
   position: relative;
-  top: 13px;
+  top: 15px;
   float: right;
   transition: 0.2s ease all;
   -moz-transition: 0.2s ease all;
   -webkit-transition: 0.2s ease all; }
 
-input:focus ~ button {
-  display: block; }
-
-input:focus {
-  width: calc(100% - 140px); }
-
-li a {
-  font-size: 1.2rem;
-  text-decoration: none; }
-
-li a:hover {
-  border-bottom: 2px solid white;
-  padding-bottom: 3px; }
-
 .disabled {
   opacity: 0.5;
   cursor: default;
   text-decoration: none !important; }
-
-#this {
-  opacity: 0.5; }
 
 .bottom {
   position: fixed;
@@ -110,15 +104,10 @@ li a:hover {
   -webkit-justify-content: space-between;
   justify-content: space-between; }
 
-li {
-  text-decoration: none;
-  list-style: none;
-  display: inline-block; }
-
 .bar {
   position: relative;
   display: block;
-  width: calc(100% - 100px); }
+  width: 100%; }
 
 .bar:before, .bar:after {
   content: "";
@@ -131,7 +120,6 @@ li {
   -moz-transition: 0.5s ease all;
   -webkit-transition: 0.5s ease all; }
 
-/* active state */
 input:focus ~ .bar:before, input:focus ~ .bar:after {
   width: 100%; }
 
@@ -148,14 +136,7 @@ input:focus ~ .bar:before, input:focus ~ .bar:after {
 .text {
   position: relative;
   top: -28px;
-  font-family: -apple-system, ".SFNSDisplay-Regular", "Segoe UI", sans-serif;
-  color: white;
-  font-size: 1rem;
-  margin: 0;
-  border: none;
-  overflow: auto;
-  outline: none;
-  background-color: transparent; }
+  font-size: 1rem; }
 
 button:hover svg {
   background: white; }
