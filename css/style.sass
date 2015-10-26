@@ -5,8 +5,8 @@ body
 .wrapper
   padding: 70px
 
-h1, li a
-  font-family: -apple-system, ".SFNSDisplay-Regular", 'Segoe UI', sans-serif
+h1, h2, li a, p, button, #Email-error
+  font-family: -apple-system, ".SFNSDisplay-Regular", 'Segoe UI', 'Roboto', sans-serif
   color: white
 
 h1
@@ -14,7 +14,25 @@ h1
   margin: 0
   font-weight: normal
 
-input
+h2, #Email-error, #ButtonSubmit
+  font-size: 1rem
+  margin: 0
+  font-weight: normal
+
+p
+  margin-top: 60px
+  max-width: 310px
+  line-height: 1.4rem
+  margin-bottom: 60px
+
+#Email-error
+  display: block
+  position: absolute
+  color: rgba(200, 70, 55,1.0)
+  margin-top: 2px
+
+
+input, button
   font-family: -apple-system, ".SFNSDisplay-Regular", 'Segoe UI', sans-serif
   color: white
   font-size: 1.5rem
@@ -27,21 +45,47 @@ input
 ::-webkit-input-placeholder
   color: rgba(255, 255, 255, 0.5)
 
-input ~ h1
-  display: none
+input
+  width: 300px
+  border-bottom: 2px solid white
+  border-bottom-color: rgba(255,255,255,0.2)
+  transition: 0.3s ease all
+  -moz-transition: 0.3s ease all
+  -webkit-transition: 0.3s ease all
 
-input:focus ~ h1
+input ~ button
+  display: inline-block
+  opacity: 0
+  background: none
+  font-size: 1.5rem
+  margin: 0
+  font-weight: normal
+  border: none
+  cursor: pointer
+  position: relative
+  top: 13px
+  float: right
+  transition: 0.2s ease all
+  -moz-transition: 0.2s ease all
+  -webkit-transition: 0.2s ease all
+
+
+input:focus ~ button
   display: block
+
+input:focus
+  width: calc(100% - 140px)
 
 li a
   font-size: 1.2rem
   text-decoration: none
 
 li a:hover
-  text-decoration: underline
+  border-bottom: 2px solid white
+  padding-bottom: 3px
 
 .disabled
-  opacity: 0.7
+  opacity: 0.5
   cursor: default
   text-decoration: none !important
 
@@ -75,6 +119,66 @@ li
   list-style: none
   display: inline-block
 
+.bar
+  position: relative
+  display: block
+  width: calc(100% - 100px)
+
+.bar:before, .bar:after
+  content: ''
+  height: 2px
+  width: 0
+  bottom: 0
+  position: absolute
+  background: white
+  transition: 0.5s ease all
+  -moz-transition: 0.5s ease all
+  -webkit-transition: 0.5s ease all
+
+
+
+
+/* active state */
+input:focus ~ .bar:before, input:focus ~ .bar:after
+  width: 100%
+
+
+.shape
+  transition: stroke-width 1s, stroke-dashoffset 1s, stroke-dasharray 1s
+  transition-delay: 0.1s
+  stroke-dasharray: 140 540
+  stroke-dashoffset: -474
+  stroke-width: 4px
+  fill: transparent
+  stroke: white
+  border-bottom: 5px solid black
+
+
+.text
+  position: relative
+  top: -28px
+  font-family: -apple-system, ".SFNSDisplay-Regular", 'Segoe UI', sans-serif
+  color: white
+  font-size: 1rem
+  margin: 0
+  border: none
+  overflow: auto
+  outline: none
+  background-color: transparent
+
+button:hover svg
+  background: white
+
+button:hover .text
+  color: #A5A5A5
+
+input:focus ~ button .svg-wrapper .shape
+  stroke-width: 4px
+  stroke-dashoffset: 0
+  stroke-dasharray: 760
+
+
+
 @media (max-width: 960px)
 
   li, .info
@@ -88,3 +192,26 @@ li
 
   .wrapper
     padding: 20px
+
+  input, .bar
+    width: 100%
+
+  button
+    display: block
+
+  button, .svg-wrapper, .shape, svg
+    width: 100%
+    padding: 0
+    height: 50px
+
+  .text
+    top: -38px
+
+  button svg
+    background: white
+
+  button .text
+    color: #A5A5A5
+
+  p
+    margin-top: 80px
