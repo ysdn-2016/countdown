@@ -43,7 +43,7 @@
 html{
 }
 
-#playpen{
+#eyepeice{
   width: 100%;
   height: 100vh;
   position: absolute;
@@ -89,6 +89,19 @@ body {
   max-width: 300px;
 }
 
+#mce-FNAME, #mce-LNAME, .input-group, .subscribe_button, .company{
+  transition: all 0.5s ease;
+}
+
+.company{
+  height: 50px;
+}
+
+.hidden{
+  opacity: 0 !important;
+  height: 0px !important;
+}
+
 h1, h2, li a, p, button, #Email-error, .text {
   font-family: 'Sofia Pro', -apple-system, ".SFNSDisplay-Regular", "Segoe UI", "Roboto", sans-serif;
   font-weight: normal;
@@ -110,16 +123,28 @@ li {
   list-style: none;
   display: inline-block; }
 
+.input-group{
+  margin-top: 10px;
+}
+
 .input-group ul {
-  margin: 10px 0px;
+  margin-top: 10px;
+  margin-bottom: 0;
   padding: 0;
 }
+
+.input-group ul li{
+  width: 47%;
+  margin-right: 2%
+}
+
 .input-group ul li label {
   cursor: pointer;
 }
 
 .input-group ul li:hover label{
-  background-color: blue;
+  background-color: rgba(0, 0, 0, 0.2);
+  border-color: transparent;
 }
 
 
@@ -136,9 +161,10 @@ p a {
   color: black; }
 
 .desc {
-  margin: 30px 0;
+  margin-top: 20px;
   max-width: 320px;
   padding: 20px;
+  padding-bottom: 0;
   background-color: white;}
 
 #logo{
@@ -168,7 +194,6 @@ input[type=text], input[type=email], input[type=submit], button {
 
 input[type=text], input[type=email], input[type=submit] {
   width: 100%;
-  height: 32px;
   margin: 10px 0;
   border-bottom: 2px solid black;
   border-bottom-color: rgba(0, 0, 0, 0.2);
@@ -176,39 +201,34 @@ input[type=text], input[type=email], input[type=submit] {
   -moz-transition: 0.3s ease all;
   -webkit-transition: 0.3s ease all; }
 
+input[type=submit]{
+  border: 2px solid black;
+  border-color: rgba(0, 0, 0, 0.2);
+  padding: 10px 0;
+}
+
 input[type=text]:focus, input[type=email]:focus {
   border-bottom-color: rgba(0, 0, 0, 1);
   }
 
-  /*
-    Hide radio button (the round disc)
-    we will use just the label to create pushbutton effect
-  */
-  input[type=radio] {
-      display:none;
-      margin:10px;
-  }
+input[type=radio] {
+    display:none;
+    margin:10px;
+}
 
-  /*
-    Change the look'n'feel of labels (which are adjacent to radiobuttons).
-    Add some margin, padding to label
-  */
-  input[type=radio] + label {
-      display:inline-block;
-      padding: 4px 12px;
-      width: 100px;
-      text-align: center;
-      background-color: #e7e7e7;
-      border-color: #ddd;
-  }
-  /*
-   Change background color for label next to checked radio button
-   to make it look like highlighted button
-  */
-  input[type=radio]:checked + label {
-     background-image: none;
-      background-color:#d0d0d0;
-  }
+input[type=radio] + label {
+    display:inline-block;
+    padding: 6px 0;
+    width: 100%;
+    text-align: center;
+    border: 2px solid black;
+    border-color: rgba(0, 0, 0, 0.2);
+}
+
+input[type=radio]:checked + label {
+   background-image: none;
+    background-color:#d0d0d0;
+}
 
 button {
   display: inline-block;
@@ -339,7 +359,18 @@ input:focus ~ button .svg-wrapper .shape {
     color: #A5A5A5; }
 
   p:first-of-type {
-    margin-top: 80px; } }
+    margin-top: 80px; }
+
+  .input-group p{
+    margin-top: 0; }
+
+  .input-group ul li{
+    width: 100%;
+  }
+  .mc_embed_signup{
+    max-width: 100%;
+  }
+}
 @media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
   button {
     top: 16px; } }

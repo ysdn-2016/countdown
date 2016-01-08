@@ -73,6 +73,11 @@ $(document).ready(function () {
   $("input").focus(function() {
     $(this).next("button").css("opacity", "1");
   });
+  
+  $('.trigger').click(function() {
+    $('.content').hide();
+    $('.' + $(this).data('rel')).show();
+  });
 });
 </script>
 <script>

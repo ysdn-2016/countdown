@@ -11,7 +11,7 @@
   <script type="text/javascript" charset="utf-8" src="js/index.js"></script>-->
 </head>
 <div id="background"></div>
-<div id="playpen"></div>
+<div id="eyepeice"></div>
 <body>
   <div class="wrapper">
     <img id="logo" src="logo.svg" onerror="this.onerror=null; this.src='image.png'">
@@ -19,7 +19,7 @@
       <!--<input id="Email" type="email" name="email" placeholder="Enter your email" autocomplete="off"></input>-->
       <div class="desc">
         <p><a href="http://design.yorku.ca">York/Sheridan Design Program</a></p></br>
-        <p>We'll soon be launching our Grad Show site. Subscribe to our email list to get updates.</p>
+        <p>We'll soon be launching our Grad Show site. Subscribe to our email list to get updates about the event.</p>
       </div>
       <!-- Begin MailChimp Signup Form -->
       <div id="mc_embed_signup">
@@ -28,27 +28,27 @@
       <div class="mc-field-group">
         <input type="email" placeholder="Enter your email" name="EMAIL" class="required email" id="mce-EMAIL">
       </div>
-      <div class="mc-field-group">
+      <!--<div class="mc-field-group">
         <input type="text" placeholder="First Name" name="FNAME" class="" id="mce-FNAME">
       </div>
       <div class="mc-field-group">
         <input type="text" placeholder="Last Name" name="LNAME" class="" id="mce-LNAME">
-      </div>
-      <div class="mc-field-group">
-        <input type="text" placeholder="Company" name="COMPANY" class="" id="mce-COMPANY">
-      </div>
-      <div class="mc-field-group input-group">
-          <strong>Are you 'Industry'? </strong>
-          <ul><li><input type="radio" value="1" name="group[7081]" id="mce-group[7081]-7081-0"><label for="mce-group[7081]-7081-0">Yes</label></li>
-      <li><input type="radio" value="2" name="group[7081]" id="mce-group[7081]-7081-1"><label for="mce-group[7081]-7081-1">No</label></li>
+      </div>-->
+      <div class="mc-field-group input-group hidden">
+          <p>Are you 'Industry'?</p>
+          <ul><li><input type="radio" value="1" name="group[7081]" id="mce-group[7081]-7081-0" class="industry"><label for="mce-group[7081]-7081-0">Yes</label></li>
+      <li><input type="radio" value="2" name="group[7081]" id="mce-group[7081]-7081-1" class="non_industry"><label for="mce-group[7081]-7081-1">No</label></li>
       </ul>
       </div>
-        <div id="mce-responses" class="clear">
+      <div class="mc-field-group company hidden">
+        <input type="text" placeholder="Company" name="COMPANY" id="mce-COMPANY">
+      </div>
+        <div id="mce-responses hidden" class="clear">
           <div class="response" id="mce-error-response" style="display:none"></div>
           <div class="response" id="mce-success-response" style="display:none"></div>
         </div>    <!-- real people should not fill this in and expect good things - do not remove this or risk form bot signups-->
           <div style="position: absolute; left: -5000px;" aria-hidden="true"><input type="text" name="b_f33d9911c326699b7c6202723_73fa04b2c1" tabindex="-1" value=""></div>
-          <div class="clear"><input type="submit" value="Get Updates" name="subscribe" id="mc-embedded-subscribe" class="button"></div>
+          <div class="clear subscribe_button hidden"><input type="submit" value="Get Updates" name="subscribe" id="mc-embedded-subscribe" class="button"></div>
           </div>
       </form>
       </div>
@@ -69,41 +69,20 @@
 <script src="https://ajax.aspnetcdn.com/ajax/jquery.validate/1.13.1/jquery.validate.min.js"></script>
 <script>
 $(document).ready(function () {
-  $('#form').validate({ // initialize the plugin
-    // rules & options
-    submitHandler: function(form) {
-      var email = $('#Email').val();
-      $(':input','#form')
-        .not(':button, :submit, :reset, :hidden')
-        .val('')
-      $.ajax({
-          url: "https://docs.google.com/forms/d/1btaXMThD0aDgk1pFhGuRMGhGqobs-QxoeU6JSkY1Lxg/formResponse",
-          data: { "entry_467173078": email},
-          type: "POST",
-          dataType: "xml",
-          statusCode: {
-              0: function () {
-                $( "h1" ).replaceWith( "<h1>Subscribed, Thanks!</h1>" );
-                $( "button" ).css( "display", "none" );
-                $( "input" ).css( "opacity", "0" );
-                $( "bar" ).css( "opacity", "0" );
-              },
-              200: function () {
-                $( "h1" ).replaceWith( "<h1>Subscribed, Thanks!</h1>" );
-                $( "button" ).css( "display", "none" );
-                $( "input" ).css( "opacity", "0" );
-                $( "bar" ).css( "opacity", "0" );
-              }
-          }
-      });
-      console.log("Sent")
-    }
+  $( "#mce-EMAIL" ).focus(function() {
+    $('.input-group').removeClass( "hidden" );
+    $('#background').fadeOut( 500 );
   });
-});
-</script>
-<script>
-$( "input" ).focus(function() {
-  $( this ).next( "button" ).css( "opacity", "1" );
+  $('.industry').click(function() {
+    $('.company').removeClass( "hidden" );
+    $( '#mce-COMPANY' ).focus(function() {
+      $('.subscribe_button').removeClass( "hidden" );
+    });
+  });
+  $('.non_industry').click(function() {
+    $('.subscribe_button').removeClass( "hidden" );
+    $('.company').addClass( "hidden" );
+  });
 });
 </script>
 <script>
@@ -120,10 +99,12 @@ $( "input" ).focus(function() {
   // DOM Ready
   $(function() {
 
-    var originalBGplaypen = $("#playpen").css("background-color"),
+    var originalBGeyepeice = $("#eyepeice").css("background-color"),
         x, y, xy, bgWebKit, bgMoz,
         lightColor = "rgba(255,255,255,0)",
         gradientSize = 150;
+
+      $('#eyepeice').css({ background: "white" });
 
       // Basic Demo
       $('body').mousemove(function(e) {
@@ -132,15 +113,15 @@ $( "input" ).focus(function() {
         y  = e.pageY - this.offsetTop;
         xy = x + " " + y;
 
-        bgWebKit = "-webkit-gradient(radial, " + xy + ", 145, " + xy + ", " + gradientSize + ", from(" + lightColor + "), to(rgba(255,255,255,1))), " + originalBGplaypen;
-        bgMoz    = "-moz-radial-gradient(" + x + "px " + y + "px 45deg, circle, " + lightColor + " 0%, " + originalBGplaypen + " " + gradientSize + "px)";
+        bgWebKit = "-webkit-gradient(radial, " + xy + ", 145, " + xy + ", " + gradientSize + ", from(" + lightColor + "), to(rgba(255,255,255,1))), " + originalBGeyepeice;
+        bgMoz    = "-moz-radial-gradient(" + x + "px " + y + "px 45deg, circle, " + lightColor + " 0%, " + originalBGeyepeice + " " + gradientSize + "px)";
 
-        $('#playpen')
+        $('#eyepeice')
           .css({ background: bgWebKit })
           .css({ background: bgMoz });
 
       }).mouseleave(function() {
-        $(this).css({ background: originalBGplaypen });
+        $(this).css({ background: originalBGeyepeice });
       });
 
   });
