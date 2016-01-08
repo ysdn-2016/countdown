@@ -117,7 +117,7 @@ h2, #Email-error, #ButtonSubmit {
 
 p, label {
   line-height: 1.4rem;
-  font-family: 'Karla';}
+  font-family: 'Karla', sans-serif;}
 
 li {
   text-decoration: none;
