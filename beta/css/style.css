@@ -322,6 +322,7 @@ input:focus ~ button .svg-wrapper .shape {
 .toshort, .toshort .info{
   position: static;
   display: block;
+  background-color: white;
 }
 
 @media (max-width: 960px) {
