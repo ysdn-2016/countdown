@@ -36,14 +36,14 @@
         <input type="text" placeholder="Last Name" name="LNAME" class="" id="mce-LNAME">
       </div>-->
       <div class="mc-field-group input-group hidden">
-          <p>Are you 'Industry'?</p>
+          <p>Do you work in a Design/Creative Industry?</p>
           <ul><li><input type="radio" value="1" name="group[7081]" id="mce-group[7081]-7081-0" class="industry"><label for="mce-group[7081]-7081-0">Yes</label></li>
       <li><input type="radio" value="2" name="group[7081]" id="mce-group[7081]-7081-1" class="non_industry"><label for="mce-group[7081]-7081-1">No</label></li>
       </ul>
       </div>
-      <div class="mc-field-group company hidden">
+      <!--<div class="mc-field-group company hidden">
         <input type="text" placeholder="Company" name="COMPANY" id="mce-COMPANY">
-      </div>
+      </div>-->
         <div id="mce-responses hidden" class="clear">
           <div class="response" id="mce-error-response" style="display:none"></div>
           <div class="response" id="mce-success-response" style="display:none"></div>
@@ -75,15 +75,29 @@ $(document).ready(function () {
     $('#background').fadeOut( 500 );
   });
   $('.industry').click(function() {
-    $('.company').removeClass( "hidden" );
-    $( '#mce-COMPANY' ).focus(function() {
-      $('.subscribe_button').removeClass( "hidden" );
-    });
+    $('.subscribe_button').removeClass( "hidden" );
   });
   $('.non_industry').click(function() {
     $('.subscribe_button').removeClass( "hidden" );
     $('.company').addClass( "hidden" );
   });
+  var viewportHeight = $(window).height();
+  (function($) {
+    var $window = $(window),
+        $html = $('html');
+
+    function resize() {
+        if ($window.height() < 800) {
+            return $('.bottom').addClass( 'toshort' );
+        }
+
+        $('.bottom').removeClass('toshort');
+    }
+
+    $window
+        .resize(resize)
+        .trigger('resize');
+  })(jQuery);
 });
 </script>
 <script>

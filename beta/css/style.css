@@ -101,6 +101,7 @@ body {
 .hidden{
   opacity: 0 !important;
   height: 0px !important;
+  overflow: hidden;
 }
 
 h1, h2, li a, p, button, #Email-error, .text {
@@ -313,6 +314,15 @@ input:focus ~ button .svg-wrapper .shape {
   stroke-width: 4px;
   stroke-dashoffset: 0;
   stroke-dasharray: 760; }
+
+.toshort .info li {
+  display: block;
+  margin: 10px 0; }
+
+.toshort, .toshort .info{
+  position: static;
+  display: block;
+}
 
 @media (max-width: 960px) {
   h1 {
